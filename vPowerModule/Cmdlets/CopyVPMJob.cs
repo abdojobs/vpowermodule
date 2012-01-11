@@ -19,9 +19,9 @@ namespace vPowerModule.Cmdlets
 
         protected override void ProcessRecord()
         {
-            base.ProcessRecord();
+            //base.ProcessRecord();
             //COPY THAT JOB~!!
-            (new vPowerModule.Objects.VPMJob(_job)).Save();
+            (new vPowerModule.Objects.VPMJob(_job)).Clone();
         }
     }
 }

@@ -99,6 +99,30 @@ namespace vPowerModule.Objects
                 this.Info.InitialRepositoryId);
             CDBManager.Instance.BackupJobs.UpdateJob(temp);
         }
-    
+
+
+        internal void Clone()
+        {
+            CDbBackupJobInfo temp = CDbBackupJobInfo.CreateNew(
+                this.Info.Name,
+                this.Info.Description,
+                this.Info.JobType,
+                this.Info.TargetHostId,
+                this.Info.TargetDir,
+                this.Info.TargetFile,
+                this.Info.Options,
+                this.Info.ScheduleOptions,
+                this.Info.VssOptions,
+                this.Info.PostCommandRunCount,
+                this.Info.VcbHostId,
+                this.Info.SourceType,
+                this.Info.TargetType,
+                this.Info.IncludedSize,
+                this.Info.ExcludedSize,
+                this.Info.BackupPlatform,
+                this.Info.TargetRepositoryId,
+                this.Info.InitialRepositoryId);
+            CDBManager.Instance.BackupJobs.UpdateJob(temp);
+        }
     }
 }
