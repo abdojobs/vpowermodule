@@ -20,7 +20,7 @@ namespace vPowerModule.Cmdlets
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
-            //COPY THAT JOB~!!
+            //COPY THAT JOB~!
         }
     }
 }
