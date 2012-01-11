@@ -54,7 +54,7 @@ namespace vPowerModule.Objects
 
         public VPMJob(VPMJob job) : this(job._job)
         {
-            this.Name = this.Name + "_copy";
+            //this.Name = this.Name + "_copy";
         }
 
         public static VPMJob[] GetAll()
@@ -104,7 +104,7 @@ namespace vPowerModule.Objects
         internal void Clone()
         {
             CDbBackupJobInfo temp = CDbBackupJobInfo.CreateNew(
-                this.Info.Name,
+                this.Info.Name + "_copy",
                 this.Info.Description,
                 this.Info.JobType,
                 this.Info.TargetHostId,
@@ -122,7 +122,7 @@ namespace vPowerModule.Objects
                 this.Info.BackupPlatform,
                 this.Info.TargetRepositoryId,
                 this.Info.InitialRepositoryId);
-            CDBManager.Instance.BackupJobs.UpdateJob(temp);
+            CDBManager.Instance.BackupJobs.CreateJob(temp);
         }
     }
 }
