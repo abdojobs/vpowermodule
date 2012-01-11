@@ -45,11 +45,15 @@ namespace vPowerModule.Objects
         }
         public Guid Id { get { return this.Info.Id; } }
 
+
         public VPMJob(CBackupJob job)
         {
             this._job = job;
             this._info = new VPMJobInfo(job.Info);
         }
+
+        public VPMJob(VPMJob job) : this(job._job)
+        {}
 
         public static VPMJob[] GetAll()
         {
