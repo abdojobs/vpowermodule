@@ -8,7 +8,7 @@ using Veeam.Backup.Core;
 
 namespace vPowerModule.Objects
 {
-    class VPMJob 
+    public class VPMJob 
     {
         private readonly CBackupJob _job;
         private VPMJobInfo _info;

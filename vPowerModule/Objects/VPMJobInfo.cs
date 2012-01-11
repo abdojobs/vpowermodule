@@ -8,7 +8,7 @@ using Veeam.Backup.Common;
 
 namespace vPowerModule.Objects
 {
-    class VPMJobInfo
+    public class VPMJobInfo
     {
         private CDbBackupJobInfo _info;
         //private CDomContainer _options;

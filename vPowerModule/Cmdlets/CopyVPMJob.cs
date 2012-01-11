@@ -10,7 +10,7 @@ using System.Reflection;
 namespace vPowerModule.Cmdlets
 {
     [Cmdlet("Copy","VPMJob")]
-    class CopyVPMJob : PSCmdlet
+    public class CopyVPMJob : PSCmdlet
     {
         private vPowerModule.Objects.VPMJob _job;
 
