@@ -52,11 +52,6 @@ namespace vPowerModule.Objects
             this._info = new VPMJobInfo(job.Info);
         }
 
-        public VPMJob(VPMJob job) : this(job._job)
-        {
-            //this.Name = this.Name + "_copy";
-        }
-
         public static VPMJob[] GetAll()
         {
             var list = CBackupJob.GetAll();
