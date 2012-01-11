@@ -53,7 +53,9 @@ namespace vPowerModule.Objects
         }
 
         public VPMJob(VPMJob job) : this(job._job)
-        {}
+        {
+            this.Name = this.Name + "_copy";
+        }
 
         public static VPMJob[] GetAll()
         {

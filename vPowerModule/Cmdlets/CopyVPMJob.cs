@@ -21,6 +21,7 @@ namespace vPowerModule.Cmdlets
         {
             base.ProcessRecord();
             //COPY THAT JOB~!!
+            (new vPowerModule.Objects.VPMJob(_job)).Save();
         }
     }
 }
