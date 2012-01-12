@@ -8,8 +8,9 @@ using Veeam.Backup.Core;
 
 namespace vPowerModule.Objects
 {
-    public class VPMJob 
+    public class VPMJob
     {
+        #region Properties
         private readonly CBackupJob _job;
         private VPMJobInfo _info;
 
@@ -44,7 +45,7 @@ namespace vPowerModule.Objects
             }
         }
         public Guid Id { get { return this.Info.Id; } }
-
+        #endregion
 
         public VPMJob(CBackupJob job)
         {
@@ -118,6 +119,11 @@ namespace vPowerModule.Objects
                 this.Info.TargetRepositoryId,
                 this.Info.InitialRepositoryId);
             CDBManager.Instance.BackupJobs.CreateJob(temp);
+        }
+
+        internal void Start()
+        {
+            //TODO: 
         }
     }
 }
