@@ -10,6 +10,7 @@ namespace vPowerModule.Objects
 {
     public class VPMJobInfo
     {
+        #region Private Properties
         private CDbBackupJobInfo _info;
         private VPMOptions _options;
         private VPMScheduleOptions _schedOptions;
@@ -18,7 +19,9 @@ namespace vPowerModule.Objects
         private string _description;
         private string _targetDir = null;
         private int _postRunCount = -999; // Setting this to a ridiculous number for evaluation later
+        #endregion
 
+        #region Public Properties
         public Guid Id { get { return this.Info.Id; } } // If you ever need a reason to set this...You can write a SQL query...
         public string Name
         {
@@ -141,7 +144,8 @@ namespace vPowerModule.Objects
         {
             get { return this.Info.InitialRepositoryId; }
         } // Probably staying a get for reporting?
-        
+        #endregion
+
 
         internal bool IsBackup()
         {
@@ -166,13 +170,7 @@ namespace vPowerModule.Objects
         }
 
 
-        internal CDbBackupJobInfo Info
-        {
-            get
-            {
-                return this._info;
-            }
-        }
+
         public VPMJobInfo(CDbBackupJobInfo Info)
         {
             this._info = Info;
