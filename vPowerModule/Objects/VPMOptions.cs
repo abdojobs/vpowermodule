@@ -10,6 +10,12 @@ namespace vPowerModule.Objects
     {
         private CDomContainer _options;
 
+        public CDomContainer Options
+        {
+            get { return _options; }
+            set { _options = value; }
+        }
+
         public VPMOptions(CDomContainer cDomContainer)
         {
             // TODO: Complete member initialization

@@ -81,9 +81,9 @@ namespace vPowerModule.Objects
         {
             get { return this.Info.TargetFile; }
         } // Don't really need to set this atm, would be a cool feature to change the file names after a job has been created
-        public CDomContainer Options
+        public VPMOptions Options
         {
-            get { return this.Info.Options; }
+            get { return this._options; }
         } // Will need to create a VPMOptions
         public ScheduleOptions ScheduleOptions
         {
@@ -145,13 +145,7 @@ namespace vPowerModule.Objects
             get { return this.Info.InitialRepositoryId; }
         } // Probably staying a get for reporting?
         #endregion
-        internal CDbBackupJobInfo Info
-        {
-            get
-            {
-                return this._info;
-            }
-        }
+
 
         internal bool IsBackup()
         {
