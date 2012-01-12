@@ -121,16 +121,14 @@ namespace vPowerModule.Objects
             CDBManager.Instance.BackupJobs.CreateJob(temp);
         }
 
-        internal object Start(bool retry = false, bool full = false, bool async=false)
+        internal void Start()
         {
-            /*Guid guid = new Guid();
-            if (retry) { guid = SVeeamBackupService.Instance.Session.GetJobManagementService().StartJob(this._job.Id); }
-            else if (full) { guid = SVeeamBackupService.Instance.Session.GetJobManagementService().StartFullBackupJob(this._job.Id); }
-            else { guid = SVeeamBackupService.Instance.Session.GetJobManagementService().StartJob(this._job.Id); }
-
-            return CBackupSession.Get(guid);*/
-            // The above requires Veeam.Backup.Interaction.Management, and I don't have that.
-            return 0;
+            System.Diagnostics.ProcessStartInfo jobRun = new System.Diagnostics.ProcessStartInfo();
+            jobRun.CreateNoWindow = true;
+            jobRun.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+            jobRun.FileName = "C:\\Program Files\\Veeam\\Backup and Replication\\Veeam.Backup.Manager.exe";
+            jobRun.Arguments = "backup " + this.Id;
+            System.Diagnostics.Process.Start(jobRun);
         }
     }
 }
