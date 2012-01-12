@@ -6,15 +6,23 @@ using System.Text;
 using Veeam.Backup.Core;
 using vPowerModule;
 using System.Reflection;
+using Lapointe.PowerShell.MamlGenerator.Attributes;
 
 namespace vPowerModule.Cmdlets
 {
+    // Set Metadata
     [Cmdlet("Get","VPMJob")]
+    [CmdletDescription("Returns a list of Veeam Jobs")]
+    [RelatedCmdlets((typeof(CopyVPMJob)))]
+    [Example(Code = "PS C:\\ Get-VPMJob | ?{$_.IsBackup}", Remarks = "Returns a list of jobs that are only Backup jobs.")]
+    [Example(Code = "PS C:\\ Get-VPMJob | ?{$_.IsReplica}", Remarks = "Returns a list of jobs that are only Replica jobs.")]
+    [Example(Code = "PS C:\\ Get-VPMJob -Name \"Backup Job 1\"", Remarks = "Returns job with name of \"Backup Job 1\"")]
+    [Example(Code = "PS C:\\ Get-VPMJob -Name \"VPM*\"", Remarks = "Returns a list of jobs that start with \"VPM\"\n")]
     public class GetVPMJob: PSCmdlet
     {
         private string[] _name;
         [Parameter(Position = 0, Mandatory = false)]
-
+        [SupportsWildcards]
         public string[] Name
         {
             get { return this._name; }

@@ -11,9 +11,9 @@ namespace vPowerModule.Objects
     public class VPMJobInfo
     {
         private CDbBackupJobInfo _info;
-        //private CDomContainer _options;
-        //private ScheduleOptions _schedOptions;
-        //private CVssOptions _vssOptions;
+        private VPMOptions _options;
+        private VPMScheduleOptions _schedOptions;
+        private VPMVssOptions _vssOptions;
         private string _name;
         private string _description;
         private string _targetDir = null;
