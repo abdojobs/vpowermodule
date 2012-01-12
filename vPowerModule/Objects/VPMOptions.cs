@@ -9,5 +9,11 @@ namespace vPowerModule.Objects
     public class VPMOptions
     {
         private CDomContainer _options;
+
+        public VPMOptions(CDomContainer cDomContainer)
+        {
+            // TODO: Complete member initialization
+            this._options = cDomContainer;
+        }
     }
 }

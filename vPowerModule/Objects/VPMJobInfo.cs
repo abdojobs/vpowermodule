@@ -176,6 +176,9 @@ namespace vPowerModule.Objects
         public VPMJobInfo(CDbBackupJobInfo Info)
         {
             this._info = Info;
+            this._options = new VPMOptions(Info.Options);
+            this._schedOptions = new VPMScheduleOptions(Info.ScheduleOptions);
+            this._vssOptions = new VPMVssOptions(Info.VssOptions);
         }
 
     }
