@@ -43,7 +43,7 @@ namespace vPowerModule.Cmdlets
         {
             foreach (vPowerModule.Objects.VPMJob job in this._job)
             {
-                this.WriteObject(job.Start((bool)_retry,(bool)_full,(bool)_runAsync), false);
+                job.Start();
             }
         }
     }
