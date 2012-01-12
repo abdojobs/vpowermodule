@@ -82,13 +82,13 @@ namespace vPowerModule.Objects
         {
             get { return this._options; }
         } // Will need to create a VPMOptions
-        public ScheduleOptions ScheduleOptions
+        public VPMScheduleOptions ScheduleOptions
         {
-            get { return this.Info.ScheduleOptions; }
+            get { return this._schedOptions; }
         } // Need to create VPMScheduleOptions
-        public CVssOptions VssOptions
+        public VPMVssOptions VssOptions
         {
-            get { return this.Info.VssOptions; }
+            get { return this._vssOptions; }
         } // Need to create VPMVssOptions
         public int PostCommandRunCount
         {
