@@ -169,6 +169,13 @@ namespace vPowerModule.Objects
                 return false;
         }
 
+        internal CDbBackupJobInfo Info
+        {
+            get
+            {
+                return this._info;
+            }
+        }
 
 
         public VPMJobInfo(CDbBackupJobInfo Info)
