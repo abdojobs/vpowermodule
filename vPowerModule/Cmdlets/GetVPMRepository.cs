@@ -8,8 +8,9 @@ using Veeam.Backup.Core;
 namespace vPowerModule.Cmdlets
 {
     [Cmdlet(VerbsCommon.Get,"VPMRepository")]
-    class GetVPMRepository : PSCmdlet
+    public class GetVPMRepository : PSCmdlet
     {
+
 
         protected override void ProcessRecord()
         {
