@@ -13,6 +13,7 @@ namespace vPowerModule.Objects
         #region Properties
         private readonly CBackupJob _job;
         private VPMJobInfo _info;
+        private  string managerExe = "C:\\Program Files\\Veeam\\Backup and Replication\\Veeam.Backup.Manager.exe";
 
         public string Name
         {
@@ -133,9 +134,19 @@ namespace vPowerModule.Objects
             System.Diagnostics.ProcessStartInfo jobRun = new System.Diagnostics.ProcessStartInfo();
             jobRun.CreateNoWindow = true;
             jobRun.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
-            jobRun.FileName = "C:\\Program Files\\Veeam\\Backup and Replication\\Veeam.Backup.Manager.exe";
+            jobRun.FileName = this.managerExe;
             jobRun.Arguments = "startbackupjob " + "owner=[vbsvc] " + RunType + " " + this.Id + " " + tempSession.Id;
             System.Diagnostics.Process.Start(jobRun);
+        }
+
+        internal void Stop()
+        {
+            System.Diagnostics.ProcessStartInfo jobStop = new System.Diagnostics.ProcessStartInfo();
+            jobStop.CreateNoWindow = true;
+            jobStop.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+            jobStop.FileName = this.managerExe;
+            jobStop.Arguments = "stop " + this.Id;
+            System.Diagnostics.Process.Start(jobStop);
         }
     }
 }
