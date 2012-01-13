@@ -97,10 +97,13 @@ namespace vPowerModule.Objects
         }
 
 
-        internal void Clone()
+        internal void Clone(string name)
         {
+            string jobName;
+            if (name == null) { jobName = this.Info.Name + "_copy"; }
+            else { jobName = name; }
             CDbBackupJobInfo temp = CDbBackupJobInfo.CreateNew(
-                this.Info.Name + "_copy",
+                jobName,
                 this.Info.Description,
                 this.Info.JobType,
                 this.Info.TargetHostId,

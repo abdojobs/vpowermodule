@@ -12,7 +12,7 @@ namespace vPowerModule.Cmdlets
 {
     [Cmdlet("Get","VPMJob")]
     [CmdletDescription("Returns a list of Veeam Jobs")]
-    [RelatedCmdlets((typeof(CopyVPMJob)))]
+    //[RelatedCmdlets((typeof(CopyVPMJob)))]
     [RelatedCmdlets((typeof(StartVPMJob)))]
     [Example(Code = "PS C:\\ Get-VPMJob | ?{$_.IsBackup}", Remarks = "Returns a list of jobs that are only Backup jobs.")]
     [Example(Code = "PS C:\\ Get-VPMJob | ?{$_.IsReplica}", Remarks = "Returns a list of jobs that are only Replica jobs.")]
