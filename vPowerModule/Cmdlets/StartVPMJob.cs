@@ -11,9 +11,12 @@ using Lapointe.PowerShell.MamlGenerator.Attributes;
 namespace vPowerModule.Cmdlets
 {
     [Cmdlet("Start", "VPMJob")]
-    [CmdletDescription("Starts a VPM Job")]
+    [CmdletDescription("Starts a VPM Job based off of a single job or an array of jobs.")]
+    [Example(Code = "PS C:\\ $Job = Get-VPMJob -name \"Backup Job\"\nPS C:\\ Start-VPMJob $Job", Remarks = "Sets $Job to an existing VPM Job and then starts it.")]
+    [Example(Code = "PS C:\\ Get-VPMJob -name \"Backup Job\" | Start-VPMJob", Remarks = "Gets a job with the name of \"Backup Job\" and pipes it directly into Start-VPMJob")]
+    [Example(Code = "PS C:\\ Get-VPMJob -name \"VPM*\" | Start-VPMJob", Remarks = "Gets a list of jobs that start with VPM and pipes it directly into Start-VPMJob")]
     [RelatedCmdlets((typeof(CopyVPMJob)))]
-    [RelatedCmdlets((typeof(StartVPMJob)))]
+    //[RelatedCmdlets((typeof(StartVPMJob)))]
     public class StartVPMJob : PSCmdlet
     {
         private vPowerModule.Objects.VPMJob[] _job;
