@@ -67,11 +67,13 @@
   <ItemGroup>
     <Compile Include="Cmdlets\CopyVPMJob.cs" />
     <Compile Include="Cmdlets\GetVPMJob.cs" />
+    <Compile Include="Cmdlets\GetVPMRepository.cs" />
     <Compile Include="Cmdlets\StartVPMJob.cs" />
     <Compile Include="Cmdlets\StopVPMJob.cs" />
     <Compile Include="Objects\VPMJob.cs" />
     <Compile Include="Objects\VPMJobInfo.cs" />
     <Compile Include="Objects\VPMOptions.cs" />
+    <Compile Include="Objects\VPMRepository.cs" />
     <Compile Include="Objects\VPMScheduleOptions.cs" />
     <Compile Include="Objects\VPMVssOptions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
