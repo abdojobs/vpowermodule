@@ -121,13 +121,17 @@ namespace vPowerModule.Objects
             CDBManager.Instance.BackupJobs.CreateJob(temp);
         }
 
-        internal void Start()
+        internal void Start(string RunType)
         {
+            // Create a blank task sesion and set its event to started
+            CBackupSession tempSession = CBackupSession.Create(CDbBackupJobInfo.Mode.Full, this._job, true);
+            Veeam.Backup.Core.CJobEvent.Create(tempSession.Id, "started");
+
             System.Diagnostics.ProcessStartInfo jobRun = new System.Diagnostics.ProcessStartInfo();
             jobRun.CreateNoWindow = true;
             jobRun.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
             jobRun.FileName = "C:\\Program Files\\Veeam\\Backup and Replication\\Veeam.Backup.Manager.exe";
-            jobRun.Arguments = "backup " + this.Id;
+            jobRun.Arguments = "startbackupjob " + "owner=[vbsvc] " + RunType + " " + this.Id + " " + tempSession.Id;
             System.Diagnostics.Process.Start(jobRun);
         }
     }
