@@ -10,7 +10,7 @@ using Lapointe.PowerShell.MamlGenerator.Attributes;
 
 namespace vPowerModule.Cmdlets
 {
-    [Cmdlet("Get","VPMJob")]
+    [Cmdlet("Get","VPMJob")] 
     [CmdletDescription("Returns a list of Veeam Jobs")]
     //[RelatedCmdlets((typeof(CopyVPMJob)))]
     [RelatedCmdlets((typeof(StartVPMJob)))]
