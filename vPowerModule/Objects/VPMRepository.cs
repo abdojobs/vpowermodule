@@ -7,7 +7,7 @@ using Veeam.Backup.Core;
 namespace vPowerModule.Objects
 {
     class VPMRepository
-    {
+    { 
         private readonly CBackupRepository _repository;
 
         #region Properties

@@ -1,0 +1,4 @@
+syntax: regex
+^/vPowerModule/bin/Debug
+
+^/vPowerModule/obj/Debug
