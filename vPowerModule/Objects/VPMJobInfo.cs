@@ -38,7 +38,7 @@ namespace vPowerModule.Objects
                 if (Job == null)
                     this._name = value;
                 else
-                { /* fuck off?*/  }
+                { throw new Exception("Job already exists with that name"); }
             }
         }
         public string Description

@@ -10,10 +10,10 @@ using Lapointe.PowerShell.MamlGenerator.Attributes;
 
 namespace vPowerModule.Cmdlets
 {
-    // Set Metadata
     [Cmdlet("Get","VPMJob")]
     [CmdletDescription("Returns a list of Veeam Jobs")]
     [RelatedCmdlets((typeof(CopyVPMJob)))]
+    [RelatedCmdlets((typeof(StartVPMJob)))]
     [Example(Code = "PS C:\\ Get-VPMJob | ?{$_.IsBackup}", Remarks = "Returns a list of jobs that are only Backup jobs.")]
     [Example(Code = "PS C:\\ Get-VPMJob | ?{$_.IsReplica}", Remarks = "Returns a list of jobs that are only Replica jobs.")]
     [Example(Code = "PS C:\\ Get-VPMJob -Name \"Backup Job 1\"", Remarks = "Returns job with name of \"Backup Job 1\"")]
