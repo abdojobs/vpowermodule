@@ -71,14 +71,14 @@
     <Compile Include="Cmdlets\GetVPMViProxy.cs" />
     <Compile Include="Cmdlets\StartVPMJob.cs" />
     <Compile Include="Cmdlets\StopVPMJob.cs" />
-    <Compile Include="Objects\VPMJobOptions.cs" />
+    <Compile Include="Job\VPMJobOptions.cs" />
     <Compile Include="Objects\VPMViProxy.cs" />
-    <Compile Include="Objects\VPMJob.cs" />
-    <Compile Include="Objects\VPMJobInfo.cs" />
-    <Compile Include="Objects\VPMInfoOptions.cs" />
+    <Compile Include="Job\VPMJob.cs" />
+    <Compile Include="Job\VPMJobInfo.cs" />
+    <Compile Include="Job\VPMInfoOptions.cs" />
     <Compile Include="Objects\VPMRepository.cs" />
-    <Compile Include="Objects\VPMScheduleOptions.cs" />
-    <Compile Include="Objects\VPMVssOptions.cs" />
+    <Compile Include="Job\VPMScheduleOptions.cs" />
+    <Compile Include="Job\VPMVssOptions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -7,6 +7,7 @@ using Veeam.Backup.Core;
 using vPowerModule;
 using System.Reflection;
 using Lapointe.PowerShell.MamlGenerator.Attributes;
+using vPowerModule.Job;
 
 namespace vPowerModule.Cmdlets
 {
@@ -15,11 +16,11 @@ namespace vPowerModule.Cmdlets
     [Example(Code = "PS C:\\ $Job = Get-VPMJob -name \"Backup Job\"\nPS C:\\ Start-VPMJob $Job", Remarks = "Sets $Job to an existing VPM Job and then starts it.")]
     [Example(Code = "PS C:\\ Get-VPMJob -name \"Backup Job\" | Start-VPMJob", Remarks = "Gets a job with the name of \"Backup Job\" and pipes it directly into Start-VPMJob")]
     [Example(Code = "PS C:\\ Get-VPMJob -name \"VPM*\" | Start-VPMJob", Remarks = "Gets a list of jobs that start with VPM and pipes it directly into Start-VPMJob")]
-    [RelatedCmdlets((typeof(StopVPMJob)))]
+    [RelatedCmdlets(new[] {(typeof(StopVPMJob))})]
     //[RelatedCmdlets((typeof(StartVPMJob)))]
     public class StartVPMJob : PSCmdlet
     {
-        private vPowerModule.Objects.VPMJob[] _job;
+        private VPMJob[] _job;
         private SwitchParameter _retry;
         private SwitchParameter _full;
 
@@ -28,7 +29,7 @@ namespace vPowerModule.Cmdlets
             Mandatory = true,
             ValueFromPipeline = true)]
         [ValidateNotNullOrEmpty]
-        public vPowerModule.Objects.VPMJob[] Job
+        public VPMJob[] Job
         {
             get { return this._job; }
             set { this._job = value; }            
@@ -44,7 +45,7 @@ namespace vPowerModule.Cmdlets
 
         protected override void ProcessRecord()
         {
-            foreach (vPowerModule.Objects.VPMJob job in this._job)
+            foreach (VPMJob job in this._job)
             {
                 if (_full)
                     job.Start("Full");
