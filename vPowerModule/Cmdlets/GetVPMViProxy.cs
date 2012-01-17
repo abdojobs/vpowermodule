@@ -10,7 +10,7 @@ namespace vPowerModule.Cmdlets
 {
     [Cmdlet(VerbsCommon.Get,"ViProxy")]
     [CmdletDescription("Gets all VMWare Proxies")]
-    class GetVPMViProxy : PSCmdlet
+    public class GetVPMViProxy : PSCmdlet
     {
         protected override void ProcessRecord()
         {
