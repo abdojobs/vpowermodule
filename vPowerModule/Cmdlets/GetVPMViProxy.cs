@@ -14,7 +14,10 @@ namespace vPowerModule.Cmdlets
     {
         protected override void ProcessRecord()
         {
-            // Go figure out how to get a proxy.
+            foreach (CViProxy proxy in CViProxy.GetAll())
+            {
+                this.WriteObject((object)new vPowerModule.Objects.VPMViProxy(proxy));
+            }
         }
     }
 }
