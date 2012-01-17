@@ -2,3 +2,5 @@ syntax: regex
 ^/vPowerModule/bin/Debug
 
 ^/vPowerModule/obj/Debug
+syntax: glob
+_ReSharper.vPowerModule
