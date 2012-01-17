@@ -7,6 +7,7 @@ using Veeam.Backup.Core;
 using vPowerModule;
 using System.Reflection;
 using Lapointe.PowerShell.MamlGenerator.Attributes;
+using vPowerModule.Job;
 
 namespace vPowerModule.Cmdlets
 {
@@ -16,17 +17,17 @@ namespace vPowerModule.Cmdlets
     [Example(Code = "PS C:\\ Get-VPMJob -name \"Backup Job\" | Stop-VPMJob", Remarks = "Gets a job with the name of \"Backup Job\" and pipes it directly into Stop-VPMJob")]
     [Example(Code = "PS C:\\ Get-VPMJob -name \"VPM*\" | Stop-VPMJob", Remarks = "Gets a list of jobs that Stop with VPM and pipes it directly into Stop-VPMJob")]
     //[RelatedCmdlets((typeof(CopyVPMJob)))]
-    [RelatedCmdlets((typeof(StartVPMJob)))]
+    [RelatedCmdlets(new[] {(typeof(StartVPMJob))})]
     public class StopVPMJob : PSCmdlet
     {
-        private vPowerModule.Objects.VPMJob[] _job;
+        private VPMJob[] _job;
 
         #region Parameters
         [Parameter(Position = 0,
             Mandatory = true,
             ValueFromPipeline = true)]
         [ValidateNotNullOrEmpty]
-        public vPowerModule.Objects.VPMJob[] Job
+        public VPMJob[] Job
         {
             get { return this._job; }
             set { this._job = value; }
@@ -35,7 +36,7 @@ namespace vPowerModule.Cmdlets
 
         protected override void ProcessRecord()
         {
-            foreach (vPowerModule.Objects.VPMJob job in this._job)
+            foreach (VPMJob job in this._job)
             {
                 job.Stop();
             }

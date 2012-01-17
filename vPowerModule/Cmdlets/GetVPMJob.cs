@@ -7,13 +7,14 @@ using Veeam.Backup.Core;
 using vPowerModule;
 using System.Reflection;
 using Lapointe.PowerShell.MamlGenerator.Attributes;
+using vPowerModule.Job;
 
 namespace vPowerModule.Cmdlets
 {
     [Cmdlet("Get","VPMJob")] 
     [CmdletDescription("Returns a list of Veeam Jobs")]
     //[RelatedCmdlets((typeof(CopyVPMJob)))]
-    [RelatedCmdlets((typeof(StartVPMJob)))]
+    [RelatedCmdlets(new[] {(typeof(StartVPMJob))})]
     [Example(Code = "PS C:\\ Get-VPMJob | ?{$_.IsBackup}", Remarks = "Returns a list of jobs that are only Backup jobs.")]
     [Example(Code = "PS C:\\ Get-VPMJob | ?{$_.IsReplica}", Remarks = "Returns a list of jobs that are only Replica jobs.")]
     [Example(Code = "PS C:\\ Get-VPMJob -Name \"Backup Job 1\"", Remarks = "Returns job with name of \"Backup Job 1\"")]
@@ -32,18 +33,18 @@ namespace vPowerModule.Cmdlets
         protected override void ProcessRecord()
         {
             if (this._name == null)
-                this.WriteObject((object)vPowerModule.Objects.VPMJob.GetAll(), true);
+                this.WriteObject((object)VPMJob.GetAll(), true);
             else
             {
 
                 foreach (string pattern in this._name)
                 {
                     if (pattern == null)
-                        this.WriteObject((object)vPowerModule.Objects.VPMJob.GetAll(), true);
+                        this.WriteObject((object)VPMJob.GetAll(), true);
                     else
                     {
                         WildcardPattern wildcard = new WildcardPattern(pattern, WildcardOptions.Compiled | WildcardOptions.IgnoreCase);
-                        foreach (vPowerModule.Objects.VPMJob Job in (vPowerModule.Objects.VPMJob.GetAll()))
+                        foreach (VPMJob Job in (VPMJob.GetAll()))
                         {
                             if (wildcard.IsMatch(Job.Name))
                                 WriteObject((object)Job, true);

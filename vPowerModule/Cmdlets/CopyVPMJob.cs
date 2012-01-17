@@ -9,6 +9,7 @@ using System.Reflection;
 using Lapointe.PowerShell.MamlGenerator.Attributes;
 using Veeam.Backup.Model;
 using Veeam.Backup.DBManager;
+using vPowerModule.Job;
 
 namespace vPowerModule.Cmdlets
 {
@@ -18,16 +19,16 @@ namespace vPowerModule.Cmdlets
     [Example(Code = "PS C:\\ Get-VPMJob -name \"Backup Job\" | Copy-VPMJob", Remarks = "Gets job \"Backup Job\" and pipes it directly into Copy-VPMJob")]
     [Example(Code = "PS C:\\ $Job = Get-VPMJob -name \"Backup Job\"\nPS C:\\ Copy-VPMJob $Job -Name \"New Backup Job\"", Remarks = "Sets $Job to an existing VPM Job and copies it to a new instance with the name provided.")]
     [Example(Code = "PS C:\\ Get-VPMJob -name \"Backup Job\" | Copy-VPMJob -Name \"New Backup Job\"", Remarks = "Gets VPM Job \"Backup Job\" and copies it to a new instance with the name provided.")]
-    [RelatedCmdlets((typeof(GetVPMJob)))]
+    [RelatedCmdlets(new[] {(typeof(GetVPMJob))})]
     //[RelatedCmdlets((typeof(StartVPMJob)))]
     public class CopyVPMJob : PSCmdlet
     {
-        private vPowerModule.Objects.VPMJob _job;
+        private VPMJob _job;
         private string _name;
 
 
         [Parameter(Mandatory = true, Position = 0, ValueFromPipeline = true)]
-        public vPowerModule.Objects.VPMJob Job { set { _job = value; } get { return _job; } }
+        public VPMJob Job { set { _job = value; } get { return _job; } }
 
         [Parameter(Mandatory = false, Position = 1, ValueFromPipeline = false)]
         public string Name 
