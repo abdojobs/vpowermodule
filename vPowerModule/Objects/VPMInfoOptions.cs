@@ -6,7 +6,7 @@ using Veeam.Backup.Common;
 
 namespace vPowerModule.Objects
 {
-    public class VPMOptions
+    public class VPMInfoOptions
     {
         private CDomContainer _options;
 
@@ -16,7 +16,7 @@ namespace vPowerModule.Objects
             set { _options = value; }
         }
 
-        public VPMOptions(CDomContainer cDomContainer)
+        public VPMInfoOptions(CDomContainer cDomContainer)
         {
             // TODO: Complete member initialization
             this._options = cDomContainer;

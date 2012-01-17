@@ -71,10 +71,11 @@
     <Compile Include="Cmdlets\GetVPMViProxy.cs" />
     <Compile Include="Cmdlets\StartVPMJob.cs" />
     <Compile Include="Cmdlets\StopVPMJob.cs" />
+    <Compile Include="Objects\VPMJobOptions.cs" />
     <Compile Include="Objects\VPMViProxy.cs" />
     <Compile Include="Objects\VPMJob.cs" />
     <Compile Include="Objects\VPMJobInfo.cs" />
-    <Compile Include="Objects\VPMOptions.cs" />
+    <Compile Include="Objects\VPMInfoOptions.cs" />
     <Compile Include="Objects\VPMRepository.cs" />
     <Compile Include="Objects\VPMScheduleOptions.cs" />
     <Compile Include="Objects\VPMVssOptions.cs" />
