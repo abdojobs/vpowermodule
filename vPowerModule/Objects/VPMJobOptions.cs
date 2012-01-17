@@ -4,87 +4,92 @@ namespace vPowerModule.Objects
 {
     public class VPMJobOptions
     {
-        private CJobOptions _jobOptions;
-        private VPMJobOptions _options;
-        private CDomHvReplicaTargetOptions _hvReplicaTargetOptions;
-        private CDomReIPRulesOptions _reIpRulesOptions;
-
         private CDomBackupStorageOptions _backupStorageOptions;
+        private CDomBackupTargetOptions _backupTargetOptions;
+        private CDomJobOptions _domJobOptions;
+        private CDomHvNetworkMappingOptions _hvNetworkMappingOptions;
+        private CDomHvReplicaTargetOptions _hvReplicaTargetOptions;
+        private CDomHvSourceOptions _hvSourceOptions;
+        private CDomNotificationOptions _notificationOptions;
+        private VPMJobOptions _options;
+        private CDomPostJobCommand _postJobCommand;
+        private CDomReIPRulesOptions _reIpRulesOptions;
+        private CDomViNetworkMappingOptions _viNetworkMappingOptions;
+        private CDomViReplicaTargetOptions _viReplicaTargetOptions;
+        private CDomViSourceOptions _viSourceOptions;
 
         public CDomBackupStorageOptions BackupStorageOptions
         {
-            get { return _backupStorageOptions; }
+            get { return JobOptions.BackupStorageOptions; }
             set { _backupStorageOptions = value; }
         }
 
-        public CDomBackupTargetOptions BackupTargetOptions { get; set; }
-
-        private CDomHvSourceOptions _hvSourceOptions;
+        public CDomBackupTargetOptions BackupTargetOptions
+        {
+            get { return JobOptions.BackupTargetOptions; }
+            set { _backupTargetOptions = value; }
+        }
 
         public CDomHvSourceOptions HvSourceOptions
         {
-            get { return _hvSourceOptions; }
+            get { return JobOptions.HvSourceOptions; }
             set { _hvSourceOptions = value; }
         }
-        private CDomJobOptions _domJobOptions;
 
         public CDomJobOptions DomJobOptions
         {
-            get { return _domJobOptions; }
+            get { return JobOptions.JobOptions; }
             set { _domJobOptions = value; }
         }
-        private CDomViNetworkMappingOptions _viNetworkMappingOptions;
 
         public CDomViNetworkMappingOptions ViNetworkMappingOptions
         {
-            get { return _viNetworkMappingOptions; }
+            get { return JobOptions.ViNetworkMappingOptions; }
             set { _viNetworkMappingOptions = value; }
         }
-        private CDomHvNetworkMappingOptions _hvNetworkMappingOptions;
 
         public CDomHvNetworkMappingOptions HvNetworkMappingOptions
         {
-            get { return _hvNetworkMappingOptions; }
+            get { return JobOptions.HvNetworkMappingOptions; }
             set { _hvNetworkMappingOptions = value; }
         }
-        private CDomNotificationOptions _notificationOptions;
 
         public CDomNotificationOptions NotificationOptions
         {
-            get { return _notificationOptions; }
+            get { return JobOptions.NotificationOptions; }
             set { _notificationOptions = value; }
         }
-        private CDomPostJobCommand _postJobCommand;
 
         public CDomPostJobCommand PostJobCommand
         {
-            get { return _postJobCommand; }
+            get { return JobOptions.PostJobCommand; }
             set { _postJobCommand = value; }
         }
-        private CDomViReplicaTargetOptions _viReplicaTargetOptions;
 
         public CDomViReplicaTargetOptions ViReplicaTargetOptions
         {
-            get { return _viReplicaTargetOptions; }
+            get { return JobOptions.ViReplicaTargetOptions; }
             set { _viReplicaTargetOptions = value; }
         }
-        private CDomViSourceOptions _viSourceOptions;
 
         public CDomViSourceOptions ViSourceOptions
         {
-            get { return _viSourceOptions; }
+            get { return JobOptions.ViSourceOptions; }
             set { _viSourceOptions = value; }
         }
 
         public CDomHvReplicaTargetOptions HvReplicaTargetOptions
         {
-            get { return _hvReplicaTargetOptions; }
+            get { return JobOptions.HvReplicaTargetOptions; }
             set { _hvReplicaTargetOptions = value; }
         }
+
         public CDomReIPRulesOptions ReIPRulesOptions
         {
-            get { return _reIpRulesOptions; }
+            get { return JobOptions.ReIPRulesOptions; }
             set { _reIpRulesOptions = value; }
         }
+
+        public CJobOptions JobOptions { get; set; }
     }
 }
