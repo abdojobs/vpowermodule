@@ -1,0 +1,90 @@
+C:\Users\Seth\Documents\My Dropbox\Powershell\Module\vPowerModule\vPowerModule\bin\Debug\vPowerModule.dll
+C:\Users\Seth\Documents\My Dropbox\Powershell\Module\vPowerModule\vPowerModule\bin\Debug\vPowerModule.pdb
+C:\Users\Seth\Documents\My Dropbox\Powershell\Module\vPowerModule\vPowerModule\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Seth\Documents\My Dropbox\Powershell\Module\vPowerModule\vPowerModule\obj\Debug\vPowerModule.dll
+C:\Users\Seth\Documents\My Dropbox\Powershell\Module\vPowerModule\vPowerModule\obj\Debug\vPowerModule.pdb
+C:\Users\Seth\Documents\My Dropbox\Powershell\Module\vPowerModule\vPowerModule\bin\Debug\Veeam.Backup.Core.dll
+C:\Users\Seth\Documents\My Dropbox\Powershell\Module\vPowerModule\vPowerModule\bin\Debug\Veeam.Backup.Common.dll
+C:\Users\Seth\Documents\My Dropbox\Powershell\Module\vPowerModule\vPowerModule\bin\Debug\Veeam.Backup.ViSoap.dll
+C:\Users\Seth\Documents\My Dropbox\Powershell\Module\vPowerModule\vPowerModule\bin\Debug\Veeam.Backup.Model.dll
+C:\Users\Seth\Documents\My Dropbox\Powershell\Module\vPowerModule\vPowerModule\bin\Debug\Veeam.Backup.AgentProvider.dll
+C:\Users\Seth\Documents\My Dropbox\Powershell\Module\vPowerModule\vPowerModule\bin\Debug\Veeam.Backup.ProxyProvider.dll
+C:\Users\Seth\Documents\My Dropbox\Powershell\Module\vPowerModule\vPowerModule\bin\Debug\Veeam.Backup.Interaction.Management.dll
+C:\Users\Seth\Documents\My Dropbox\Powershell\Module\vPowerModule\vPowerModule\bin\Debug\Veeam.Backup.CatalogFsLib.dll
+C:\Users\Seth\Documents\My Dropbox\Powershell\Module\vPowerModule\vPowerModule\bin\Debug\Veeam.Backup.LicenseLib.dll
+C:\Users\Seth\Documents\My Dropbox\Powershell\Module\vPowerModule\vPowerModule\bin\Debug\Veeam.Backup.HVAPI.dll
+C:\Users\Seth\Documents\My Dropbox\Powershell\Module\vPowerModule\vPowerModule\bin\Debug\Veeam.Backup.SSH.dll
+C:\Users\Seth\Documents\My Dropbox\Powershell\Module\vPowerModule\vPowerModule\bin\Debug\Veeam.Backup.VssProvider.dll
+C:\Users\Seth\Documents\My Dropbox\Powershell\Module\vPowerModule\vPowerModule\bin\Debug\Veeam.Backup.DBManager.dll
+C:\Users\Seth\Documents\My Dropbox\Powershell\Module\vPowerModule\vPowerModule\bin\Debug\Veeam.Backup.EsxManager.dll
+C:\Users\Seth\Documents\My Dropbox\Powershell\Module\vPowerModule\vPowerModule\bin\Debug\Veeam.Backup.Interaction.CatalogClient.dll
+C:\Users\Seth\Documents\My Dropbox\Powershell\Module\vPowerModule\vPowerModule\bin\Debug\Veeam.Backup.SnmpProvider.dll
+C:\Users\Seth\Documents\My Dropbox\Powershell\Module\vPowerModule\vPowerModule\bin\Debug\Veeam.Common.Remoting.dll
+C:\Users\Seth\Documents\My Dropbox\Powershell\Module\vPowerModule\vPowerModule\bin\Debug\Ionic.Zip.dll
+C:\Users\Seth\Documents\My Dropbox\Powershell\Module\vPowerModule\vPowerModule\bin\Debug\Interop.VeeamVimLib.dll
+C:\Users\Seth\Documents\My Dropbox\Powershell\Module\vPowerModule\vPowerModule\bin\Debug\Interop.VeeamProxyClient.dll
+C:\Users\Seth\Documents\My Dropbox\Powershell\Module\vPowerModule\vPowerModule\bin\Debug\Veeam.Backup.Interaction.DataCollector.dll
+C:\Users\Seth\Documents\My Dropbox\Powershell\Module\vPowerModule\vPowerModule\bin\Debug\Interop.VeeamOibIdxComLib.dll
+C:\Users\Seth\Documents\My Dropbox\Powershell\Module\vPowerModule\vPowerModule\bin\Debug\Interop.veComLic.dll
+C:\Users\Seth\Documents\My Dropbox\Powershell\Module\vPowerModule\vPowerModule\bin\Debug\Interop.VeeamGuestAgentControl.dll
+C:\Users\Seth\Documents\My Dropbox\Powershell\Module\vPowerModule\vPowerModule\bin\Debug\Interop.VeeamSnmp.dll
+C:\Users\seth.bartlett.AMUST\Dropbox\Powershell\Module\vPowerModule\vPowerModule\bin\Debug\vPowerModule.dll
+C:\Users\seth.bartlett.AMUST\Dropbox\Powershell\Module\vPowerModule\vPowerModule\bin\Debug\vPowerModule.pdb
+C:\Users\seth.bartlett.AMUST\Dropbox\Powershell\Module\vPowerModule\vPowerModule\bin\Debug\Veeam.Backup.Common.dll
+C:\Users\seth.bartlett.AMUST\Dropbox\Powershell\Module\vPowerModule\vPowerModule\bin\Debug\Veeam.Backup.Core.dll
+C:\Users\seth.bartlett.AMUST\Dropbox\Powershell\Module\vPowerModule\vPowerModule\bin\Debug\Veeam.Backup.DBManager.dll
+C:\Users\seth.bartlett.AMUST\Dropbox\Powershell\Module\vPowerModule\vPowerModule\bin\Debug\Veeam.Backup.Model.dll
+C:\Users\seth.bartlett.AMUST\Dropbox\Powershell\Module\vPowerModule\vPowerModule\bin\Debug\Ionic.Zip.dll
+C:\Users\seth.bartlett.AMUST\Dropbox\Powershell\Module\vPowerModule\vPowerModule\bin\Debug\Veeam.Backup.ViSoap.dll
+C:\Users\seth.bartlett.AMUST\Dropbox\Powershell\Module\vPowerModule\vPowerModule\bin\Debug\Veeam.Backup.AgentProvider.dll
+C:\Users\seth.bartlett.AMUST\Dropbox\Powershell\Module\vPowerModule\vPowerModule\bin\Debug\Veeam.Backup.ProxyProvider.dll
+C:\Users\seth.bartlett.AMUST\Dropbox\Powershell\Module\vPowerModule\vPowerModule\bin\Debug\Veeam.Backup.Interaction.Management.dll
+C:\Users\seth.bartlett.AMUST\Dropbox\Powershell\Module\vPowerModule\vPowerModule\bin\Debug\Veeam.Backup.CatalogFsLib.dll
+C:\Users\seth.bartlett.AMUST\Dropbox\Powershell\Module\vPowerModule\vPowerModule\bin\Debug\Veeam.Backup.LicenseLib.dll
+C:\Users\seth.bartlett.AMUST\Dropbox\Powershell\Module\vPowerModule\vPowerModule\bin\Debug\Veeam.Backup.HVAPI.dll
+C:\Users\seth.bartlett.AMUST\Dropbox\Powershell\Module\vPowerModule\vPowerModule\bin\Debug\Veeam.Backup.SSH.dll
+C:\Users\seth.bartlett.AMUST\Dropbox\Powershell\Module\vPowerModule\vPowerModule\bin\Debug\Veeam.Backup.VssProvider.dll
+C:\Users\seth.bartlett.AMUST\Dropbox\Powershell\Module\vPowerModule\vPowerModule\bin\Debug\Veeam.Backup.EsxManager.dll
+C:\Users\seth.bartlett.AMUST\Dropbox\Powershell\Module\vPowerModule\vPowerModule\bin\Debug\Veeam.Backup.Interaction.CatalogClient.dll
+C:\Users\seth.bartlett.AMUST\Dropbox\Powershell\Module\vPowerModule\vPowerModule\bin\Debug\Veeam.Backup.SnmpProvider.dll
+C:\Users\seth.bartlett.AMUST\Dropbox\Powershell\Module\vPowerModule\vPowerModule\bin\Debug\Veeam.Common.Remoting.dll
+C:\Users\seth.bartlett.AMUST\Dropbox\Powershell\Module\vPowerModule\vPowerModule\bin\Debug\Interop.VeeamVimLib.dll
+C:\Users\seth.bartlett.AMUST\Dropbox\Powershell\Module\vPowerModule\vPowerModule\bin\Debug\Interop.VeeamProxyClient.dll
+C:\Users\seth.bartlett.AMUST\Dropbox\Powershell\Module\vPowerModule\vPowerModule\bin\Debug\Veeam.Backup.Interaction.DataCollector.dll
+C:\Users\seth.bartlett.AMUST\Dropbox\Powershell\Module\vPowerModule\vPowerModule\bin\Debug\Interop.VeeamOibIdxComLib.dll
+C:\Users\seth.bartlett.AMUST\Dropbox\Powershell\Module\vPowerModule\vPowerModule\bin\Debug\Interop.veComLic.dll
+C:\Users\seth.bartlett.AMUST\Dropbox\Powershell\Module\vPowerModule\vPowerModule\bin\Debug\Interop.VeeamGuestAgentControl.dll
+C:\Users\seth.bartlett.AMUST\Dropbox\Powershell\Module\vPowerModule\vPowerModule\bin\Debug\Interop.VeeamSnmp.dll
+C:\Users\seth.bartlett.AMUST\Dropbox\Powershell\Module\vPowerModule\vPowerModule\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\seth.bartlett.AMUST\Dropbox\Powershell\Module\vPowerModule\vPowerModule\obj\Debug\vPowerModule.dll
+C:\Users\seth.bartlett.AMUST\Dropbox\Powershell\Module\vPowerModule\vPowerModule\obj\Debug\vPowerModule.pdb
+C:\Users\Justin.Teager\Documents\Visual Studio 2010\Projects\vPowerModule\vPowerModule\bin\Debug\vPowerModule.dll
+C:\Users\Justin.Teager\Documents\Visual Studio 2010\Projects\vPowerModule\vPowerModule\bin\Debug\vPowerModule.pdb
+C:\Users\Justin.Teager\Documents\Visual Studio 2010\Projects\vPowerModule\vPowerModule\bin\Debug\Veeam.Backup.Common.dll
+C:\Users\Justin.Teager\Documents\Visual Studio 2010\Projects\vPowerModule\vPowerModule\bin\Debug\Veeam.Backup.Core.dll
+C:\Users\Justin.Teager\Documents\Visual Studio 2010\Projects\vPowerModule\vPowerModule\bin\Debug\Veeam.Backup.DBManager.dll
+C:\Users\Justin.Teager\Documents\Visual Studio 2010\Projects\vPowerModule\vPowerModule\bin\Debug\Veeam.Backup.Model.dll
+C:\Users\Justin.Teager\Documents\Visual Studio 2010\Projects\vPowerModule\vPowerModule\bin\Debug\Ionic.Zip.dll
+C:\Users\Justin.Teager\Documents\Visual Studio 2010\Projects\vPowerModule\vPowerModule\bin\Debug\Veeam.Backup.ViSoap.dll
+C:\Users\Justin.Teager\Documents\Visual Studio 2010\Projects\vPowerModule\vPowerModule\bin\Debug\Veeam.Backup.AgentProvider.dll
+C:\Users\Justin.Teager\Documents\Visual Studio 2010\Projects\vPowerModule\vPowerModule\bin\Debug\Veeam.Backup.Interaction.Management.dll
+C:\Users\Justin.Teager\Documents\Visual Studio 2010\Projects\vPowerModule\vPowerModule\bin\Debug\Veeam.Backup.CatalogFsLib.dll
+C:\Users\Justin.Teager\Documents\Visual Studio 2010\Projects\vPowerModule\vPowerModule\bin\Debug\Veeam.Backup.LicenseLib.dll
+C:\Users\Justin.Teager\Documents\Visual Studio 2010\Projects\vPowerModule\vPowerModule\bin\Debug\Veeam.Backup.ProxyProvider.dll
+C:\Users\Justin.Teager\Documents\Visual Studio 2010\Projects\vPowerModule\vPowerModule\bin\Debug\Veeam.Backup.HVAPI.dll
+C:\Users\Justin.Teager\Documents\Visual Studio 2010\Projects\vPowerModule\vPowerModule\bin\Debug\Veeam.Backup.SSH.dll
+C:\Users\Justin.Teager\Documents\Visual Studio 2010\Projects\vPowerModule\vPowerModule\bin\Debug\Veeam.Backup.VssProvider.dll
+C:\Users\Justin.Teager\Documents\Visual Studio 2010\Projects\vPowerModule\vPowerModule\bin\Debug\Veeam.Backup.EsxManager.dll
+C:\Users\Justin.Teager\Documents\Visual Studio 2010\Projects\vPowerModule\vPowerModule\bin\Debug\Veeam.Backup.Interaction.CatalogClient.dll
+C:\Users\Justin.Teager\Documents\Visual Studio 2010\Projects\vPowerModule\vPowerModule\bin\Debug\Veeam.Backup.SnmpProvider.dll
+C:\Users\Justin.Teager\Documents\Visual Studio 2010\Projects\vPowerModule\vPowerModule\bin\Debug\Veeam.Common.Remoting.dll
+C:\Users\Justin.Teager\Documents\Visual Studio 2010\Projects\vPowerModule\vPowerModule\bin\Debug\Interop.VeeamVimLib.dll
+C:\Users\Justin.Teager\Documents\Visual Studio 2010\Projects\vPowerModule\vPowerModule\bin\Debug\Veeam.Backup.Interaction.DataCollector.dll
+C:\Users\Justin.Teager\Documents\Visual Studio 2010\Projects\vPowerModule\vPowerModule\bin\Debug\Interop.VeeamOibIdxComLib.dll
+C:\Users\Justin.Teager\Documents\Visual Studio 2010\Projects\vPowerModule\vPowerModule\bin\Debug\Interop.veComLic.dll
+C:\Users\Justin.Teager\Documents\Visual Studio 2010\Projects\vPowerModule\vPowerModule\bin\Debug\Interop.VeeamProxyClient.dll
+C:\Users\Justin.Teager\Documents\Visual Studio 2010\Projects\vPowerModule\vPowerModule\bin\Debug\Interop.VeeamGuestAgentControl.dll
+C:\Users\Justin.Teager\Documents\Visual Studio 2010\Projects\vPowerModule\vPowerModule\bin\Debug\Interop.VeeamSnmp.dll
+C:\Users\Justin.Teager\Documents\Visual Studio 2010\Projects\vPowerModule\vPowerModule\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Justin.Teager\Documents\Visual Studio 2010\Projects\vPowerModule\vPowerModule\obj\Debug\vPowerModule.dll
+C:\Users\Justin.Teager\Documents\Visual Studio 2010\Projects\vPowerModule\vPowerModule\obj\Debug\vPowerModule.pdb
