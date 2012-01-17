@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Veeam.Backup.Common;
+﻿using Veeam.Backup.Common;
 
-namespace vPowerModule.Objects
+namespace vPowerModule.Job
 {
     public class VPMInfoOptions
     {

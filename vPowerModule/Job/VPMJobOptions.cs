@@ -1,6 +1,6 @@
 ﻿using Veeam.Backup.Model;
 
-namespace vPowerModule.Objects
+namespace vPowerModule.Job
 {
     public class VPMJobOptions
     {

@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using Veeam.Backup.DBManager;
 using Veeam.Backup.Model;
 using Veeam.Backup.Core;
 
-namespace vPowerModule.Objects
+namespace vPowerModule.Job
 {
     public class VPMJob
     {
