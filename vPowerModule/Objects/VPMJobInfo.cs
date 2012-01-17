@@ -12,7 +12,7 @@ namespace vPowerModule.Objects
     {
         #region Private Properties
         private CDbBackupJobInfo _info;
-        private VPMOptions _options;
+        private VPMInfoOptions _options;
         private VPMScheduleOptions _schedOptions;
         private VPMVssOptions _vssOptions;
         private string _name;
@@ -81,7 +81,7 @@ namespace vPowerModule.Objects
         {
             get { return this.Info.TargetFile; }
         } // Don't really need to set this atm, would be a cool feature to change the file names after a job has been created
-        public VPMOptions Options
+        public VPMInfoOptions Options
         {
             get { return this._options; }
         } // Will need to create a VPMOptions
@@ -181,7 +181,7 @@ namespace vPowerModule.Objects
         public VPMJobInfo(CDbBackupJobInfo Info)
         {
             this._info = Info;
-            this._options = new VPMOptions(Info.Options);
+            this._options = new VPMInfoOptions(Info.Options);
             this._schedOptions = new VPMScheduleOptions(Info.ScheduleOptions);
             this._vssOptions = new VPMVssOptions(Info.VssOptions);
         }
