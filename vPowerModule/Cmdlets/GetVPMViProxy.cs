@@ -8,7 +8,7 @@ using Lapointe.PowerShell.MamlGenerator.Attributes;
 
 namespace vPowerModule.Cmdlets
 {
-    [Cmdlet(VerbsCommon.Get,"ViProxy")]
+    [Cmdlet(VerbsCommon.Get,"VPMViProxy")]
     [CmdletDescription("Gets all VMWare Proxies")]
     public class GetVPMViProxy : PSCmdlet
     {
