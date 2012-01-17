@@ -2,6 +2,7 @@
 using Veeam.Backup.DBManager;
 using Veeam.Backup.Model;
 using Veeam.Backup.Common;
+using vPowerModule.Job.Options;
 
 namespace vPowerModule.Job
 {
