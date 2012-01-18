@@ -71,7 +71,7 @@
     <Compile Include="Cmdlets\GetVPMViProxy.cs" />
     <Compile Include="Cmdlets\StartVPMJob.cs" />
     <Compile Include="Cmdlets\StopVPMJob.cs" />
-    <Compile Include="Job\Options\JobOptions.cs" />
+    <Compile Include="Job\JobOptions.cs" />
     <Compile Include="Objects\VPMViProxy.cs" />
     <Compile Include="Job\VPMJob.cs" />
     <Compile Include="Job\VPMJobInfo.cs" />

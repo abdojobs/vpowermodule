@@ -2,17 +2,17 @@
 
 namespace vPowerModule.Job.Options
 {
-    public class VPMVssOptions
+    public class VssOptions
     {
         private CVssOptions _vssOptions;
 
-        public CVssOptions VssOptions
+        public CVssOptions cVssOptions
         {
             get { return _vssOptions; }
             set { _vssOptions = value; }
         }
 
-        public VPMVssOptions(CVssOptions cVssOptions)
+        public VssOptions(CVssOptions cVssOptions)
         {
             // TODO: Complete member initialization
             this._vssOptions = cVssOptions;

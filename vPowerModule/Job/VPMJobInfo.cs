@@ -3,6 +3,7 @@ using Veeam.Backup.DBManager;
 using Veeam.Backup.Model;
 using Veeam.Backup.Common;
 using vPowerModule.Job.Options;
+using ScheduleOptions = vPowerModule.Job.Options.ScheduleOptions;
 
 namespace vPowerModule.Job
 {
@@ -11,8 +12,8 @@ namespace vPowerModule.Job
         #region Private Properties
         private CDbBackupJobInfo _info;
         private VPMInfoOptions _options;
-        private VPMScheduleOptions _schedOptions;
-        private VPMVssOptions _vssOptions;
+        private ScheduleOptions _schedOptions;
+        private VssOptions _vssOptions;
         private string _name;
         private string _description;
         private string _targetDir = null;
@@ -83,14 +84,14 @@ namespace vPowerModule.Job
         {
             get { return this._options; }
         } // Will need to create a VPMOptions
-        public VPMScheduleOptions ScheduleOptions
+        public ScheduleOptions ScheduleOptions
         {
             get { return this._schedOptions; }
-        } // Need to create VPMScheduleOptions
-        public VPMVssOptions VssOptions
+        } // Need to create ScheduleOptions
+        public VssOptions VssOptions
         {
             get { return this._vssOptions; }
-        } // Need to create VPMVssOptions
+        } // Need to create VssOptions
         public int PostCommandRunCount
         {
             get
@@ -180,8 +181,8 @@ namespace vPowerModule.Job
         {
             this._info = Info;
             this._options = new VPMInfoOptions(Info.Options);
-            this._schedOptions = new VPMScheduleOptions(Info.ScheduleOptions);
-            this._vssOptions = new VPMVssOptions(Info.VssOptions);
+            this._schedOptions = new ScheduleOptions(Info.ScheduleOptions);
+            this._vssOptions = new VssOptions(Info.VssOptions);
         }
 
     }
