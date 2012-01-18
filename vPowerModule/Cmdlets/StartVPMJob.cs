@@ -11,7 +11,7 @@ using vPowerModule.Job;
 
 namespace vPowerModule.Cmdlets
 {
-    [Cmdlet("Start", "VPMJob")]
+    [Cmdlet(VerbsLifecycle.Start, "VPMJob")]
     [CmdletDescription("Starts a VPM Job based off of a single job or an array of jobs.")]
     [Example(Code = "PS C:\\ $Job = Get-VPMJob -name \"Backup Job\"\nPS C:\\ Start-VPMJob $Job", Remarks = "Sets $Job to an existing VPM Job and then starts it.")]
     [Example(Code = "PS C:\\ Get-VPMJob -name \"Backup Job\" | Start-VPMJob", Remarks = "Gets a job with the name of \"Backup Job\" and pipes it directly into Start-VPMJob")]
