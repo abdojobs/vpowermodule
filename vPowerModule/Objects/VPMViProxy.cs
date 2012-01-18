@@ -6,7 +6,7 @@ using Veeam.Backup.Core;
 
 namespace vPowerModule.Objects
 {
-    class VPMViProxy
+    public class VPMViProxy
     {
         private CViProxy proxy;
 
