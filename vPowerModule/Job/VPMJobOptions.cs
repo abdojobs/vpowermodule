@@ -3,7 +3,7 @@ using Veeam.Backup.Model;
 
 namespace vPowerModule.Job
 {
-    public class JobOptions
+    public class VPMJobOptions
     {
         private CJobOptions _jobOptions;
         private CDomBackupStorageOptions _backupStorageOptions;
@@ -20,7 +20,7 @@ namespace vPowerModule.Job
         private CDomViSourceOptions _viSourceOptions;
         private CDomContainer _options;
 
-        public JobOptions(CJobOptions options)
+        public VPMJobOptions(CJobOptions options)
         {
             this.vOptions = options;
         }

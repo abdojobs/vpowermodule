@@ -4,7 +4,6 @@ using Veeam.Backup.DBManager;
 using Veeam.Backup.Model;
 using vPowerModule.Job.Options;
 using vPowerModule.Objects;
-using ScheduleOptions = vPowerModule.Job.Options.ScheduleOptions;
 
 namespace vPowerModule.Job
 {
@@ -14,8 +13,8 @@ namespace vPowerModule.Job
 
         private readonly CDbBackupJobInfo _info;
         private readonly VPMInfoOptions _options;
-        private readonly ScheduleOptions _schedOptions;
-        private readonly VssOptions _vssOptions;
+        private readonly VPMScheduleOptions _schedOptions;
+        private readonly VPMVssOptions _vssOptions;
         private string _description;
         private string _name;
         private int _postRunCount = -999; // Setting this to a ridiculous number for evaluation later
@@ -125,18 +124,18 @@ namespace vPowerModule.Job
         }
 
         // Will need to create a VPMOptions
-        public ScheduleOptions ScheduleOptions
+        public VPMScheduleOptions ScheduleOptions
         {
             get { return _schedOptions; }
         }
 
-        // Need to create ScheduleOptions
-        public VssOptions VssOptions
+        // Need to create VPMScheduleOptions
+        public VPMVssOptions VssOptions
         {
             get { return _vssOptions; }
         }
 
-        // Need to create VssOptions
+        // Need to create VPMVssOptions
         public int PostCommandRunCount
         {
             get
@@ -238,8 +237,8 @@ namespace vPowerModule.Job
         {
             _info = Info;
             _options = new VPMInfoOptions(Info.Options);
-            _schedOptions = new ScheduleOptions(Info.ScheduleOptions);
-            _vssOptions = new VssOptions(Info.VssOptions);
+            _schedOptions = new VPMScheduleOptions(Info.ScheduleOptions);
+            _vssOptions = new VPMVssOptions(Info.VssOptions);
         }
 
         internal void ChangeRepository(VPMRepository repository)

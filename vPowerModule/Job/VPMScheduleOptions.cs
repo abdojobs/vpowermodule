@@ -2,7 +2,7 @@
 
 namespace vPowerModule.Job.Options
 {
-    public class ScheduleOptions
+    public class VPMScheduleOptions
     {
         private Veeam.Backup.Model.ScheduleOptions _schedOptions;
 
@@ -13,7 +13,7 @@ namespace vPowerModule.Job.Options
         }
         
 
-        public ScheduleOptions(Veeam.Backup.Model.ScheduleOptions scheduleOptions)
+        public VPMScheduleOptions(Veeam.Backup.Model.ScheduleOptions scheduleOptions)
         {
             // TODO: Complete member initialization
             this._schedOptions = scheduleOptions;

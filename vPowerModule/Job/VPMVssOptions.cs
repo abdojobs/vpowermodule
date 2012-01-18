@@ -2,7 +2,7 @@
 
 namespace vPowerModule.Job.Options
 {
-    public class VssOptions
+    public class VPMVssOptions
     {
         private CVssOptions _vssOptions;
 
@@ -12,7 +12,7 @@ namespace vPowerModule.Job.Options
             set { _vssOptions = value; }
         }
 
-        public VssOptions(CVssOptions cVssOptions)
+        public VPMVssOptions(CVssOptions cVssOptions)
         {
             // TODO: Complete member initialization
             this._vssOptions = cVssOptions;
