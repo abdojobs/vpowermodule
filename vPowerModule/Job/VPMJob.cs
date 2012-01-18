@@ -67,6 +67,11 @@ namespace vPowerModule.Job
 
         #region Public Methods
 
+        public CObjectInJob[] GetObjectsInJob()
+        {
+            return CObjectInJob.GetByJob(this.Info.Id);
+        }
+
         public void ChangeRepository(VPMRepository repository)
         {
             Info.ChangeRepository(repository);
@@ -83,7 +88,7 @@ namespace vPowerModule.Job
                 Info.TargetDir,
                 Info.TargetFile,
                 Info.Options.Options,
-                Info.VpmScheduleOptions.SchedOptions,
+                Info.ScheduleOptions.SchedOptions,
                 Info.VssOptions.cVssOptions,
                 Info.PostCommandRunCount,
                 Info.VcbHostId,
@@ -103,7 +108,7 @@ namespace vPowerModule.Job
 
         #region Internal Methods
 
-        internal void Clone(string name)
+        internal void Clone(string name, bool includeObjects)
         {
             string jobName;
             if (name == null)
@@ -122,7 +127,7 @@ namespace vPowerModule.Job
                 Info.TargetDir,
                 Info.TargetFile,
                 Info.Options.Options,
-                Info.VpmScheduleOptions.SchedOptions,
+                Info.ScheduleOptions.SchedOptions,
                 Info.VssOptions.cVssOptions,
                 Info.PostCommandRunCount,
                 Info.VcbHostId,
@@ -133,7 +138,18 @@ namespace vPowerModule.Job
                 Info.BackupPlatform,
                 Info.TargetRepositoryId,
                 Info.InitialRepositoryId);
-            CDBManager.Instance.BackupJobs.CreateJob(temp);
+            CBackupJob.Create(temp);
+            if(includeObjects)
+            {
+                foreach (CObjectInJob objectInJob in this._job.GetObjectsInJob())
+                {
+                    CObjectInJob.CreateViOij(temp.Id, objectInJob.GetObject().Id, new Guid("00000000-0000-0000-0000-000000000000"), 
+                                             temp.VssOptions, objectInJob.Info.ApproxSize, objectInJob.Info.Location,
+                                             objectInJob.Info.Type, objectInJob.Info.DiskFilter,
+                                             objectInJob.Info.UpdateVmx);
+                }
+                CBackupJob.Update(temp);
+            }
         }
 
         internal void Start(string RunType)

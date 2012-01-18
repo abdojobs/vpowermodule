@@ -11,7 +11,7 @@ using vPowerModule.Job;
 
 namespace vPowerModule.Cmdlets
 {
-    [Cmdlet("Get","VPMJob")] 
+    [Cmdlet(VerbsCommon.Get, "VPMJob")] 
     [CmdletDescription("Returns a list of Veeam Jobs")]
     //[RelatedCmdlets((typeof(CopyVPMJob)))]
     [RelatedCmdlets(new[] {(typeof(StartVPMJob))})]

@@ -11,7 +11,7 @@ using vPowerModule.Job;
 
 namespace vPowerModule.Cmdlets
 {
-    [Cmdlet("Stop", "VPMJob")]
+    [Cmdlet(VerbsLifecycle.Stop, "VPMJob")]
     [CmdletDescription("Stops a VPM Job based off of a single job or an array of jobs.")]
     [Example(Code = "PS C:\\ $Job = Get-VPMJob -name \"Backup Job\"\nPS C:\\ Stop-VPMJob $Job", Remarks = "Sets $Job to an existing VPM Job and then Stops it.")]
     [Example(Code = "PS C:\\ Get-VPMJob -name \"Backup Job\" | Stop-VPMJob", Remarks = "Gets a job with the name of \"Backup Job\" and pipes it directly into Stop-VPMJob")]
