@@ -205,18 +205,9 @@ namespace vPowerModule.Job
 
         #endregion
 
-        public VPMJobInfo(CDbBackupJobInfo Info)
-        {
-            _info = Info;
-            _options = new VPMInfoOptions(Info.Options);
-            _schedOptions = new ScheduleOptions(Info.ScheduleOptions);
-            _vssOptions = new VssOptions(Info.VssOptions);
-        }
+        #region Internal Properties
 
-        internal CDbBackupJobInfo Info
-        {
-            get { return _info; }
-        }
+        internal CDbBackupJobInfo Info{ get { return _info; } }
 
         internal bool IsBackup()
         {
@@ -240,6 +231,15 @@ namespace vPowerModule.Job
                 return true;
             else
                 return false;
+        }
+        #endregion
+
+        public VPMJobInfo(CDbBackupJobInfo Info)
+        {
+            _info = Info;
+            _options = new VPMInfoOptions(Info.Options);
+            _schedOptions = new ScheduleOptions(Info.ScheduleOptions);
+            _vssOptions = new VssOptions(Info.VssOptions);
         }
 
         internal void ChangeRepository(VPMRepository repository)
