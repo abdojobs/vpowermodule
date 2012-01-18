@@ -1,7 +1,7 @@
 ﻿using System;
+using Veeam.Backup.Common;
 using Veeam.Backup.DBManager;
 using Veeam.Backup.Model;
-using Veeam.Backup.Common;
 using vPowerModule.Job.Options;
 using vPowerModule.Objects;
 using ScheduleOptions = vPowerModule.Job.Options.ScheduleOptions;
@@ -11,206 +11,242 @@ namespace vPowerModule.Job
     public class VPMJobInfo
     {
         #region Private Properties
-        private CDbBackupJobInfo _info;
-        private VPMInfoOptions _options;
-        private ScheduleOptions _schedOptions;
-        private VssOptions _vssOptions;
-        private string _name;
+
+        private readonly CDbBackupJobInfo _info;
+        private readonly VPMInfoOptions _options;
+        private readonly ScheduleOptions _schedOptions;
+        private readonly VssOptions _vssOptions;
         private string _description;
-        private string _targetDir = null;
-        private Guid _targetRepoId;
-        private Guid _targetHostId;
+        private string _name;
         private int _postRunCount = -999; // Setting this to a ridiculous number for evaluation later
+        private string _targetDir;
+        private Guid _targetHostId;
+        private Guid _targetRepoId;
+
         #endregion
 
         #region Public Properties
-        public Guid Id { get { return this.Info.Id; } } // If you ever need a reason to set this...You can write a SQL query...
+
+        public Guid Id
+        {
+            get { return Info.Id; }
+        }
+
+        // If you ever need a reason to set this...You can write a SQL query...
         public string Name
         {
-            get 
+            get
             {
                 if (_name == null)
-                    return this.Info.Name;
+                    return Info.Name;
                 else
-                    return this._name;
+                    return _name;
             }
-            set 
+            set
             {
                 CDbBackupJobInfo Job = CDBManager.Instance.BackupJobs.FindJob(value);
                 if (Job == null)
-                    this._name = value;
+                    _name = value;
                 else
-                { throw new Exception("Job already exists with that name"); }
+                {
+                    throw new Exception("Job already exists with that name");
+                }
             }
         }
+
         public string Description
         {
-            get 
+            get
             {
                 if (_description == null)
-                    return this.Info.Description;
+                    return Info.Description;
                 else
-                    return this._description;
+                    return _description;
             }
-            set 
-            { 
-                _description = value; 
-            }
+            set { _description = value; }
         }
+
         public EDbJobType JobType
         {
-            get { return this._info.JobType; }
+            get { return Info.JobType; }
         }
+
+        public Guid VcbHostId
+        {
+            get { return Info.VcbHostId; }
+        }
+
+        public string TargetDir
+        {
+            get
+            {
+                if (_targetDir == null)
+                    return Info.TargetDir;
+                else
+                    return _targetDir;
+            }
+            set { throw new Exception("Please use ChangeRepository() on the job object to set this value."); }
+        }
+
         public Guid TargetHostId // Still needs some error checking and verified
         {
             get
             {
-                if(_targetHostId == null)
-                    return this.Info.TargetHostId;
+                if (_targetHostId == null)
+                    return Info.TargetHostId;
                 else
-                    return this._targetHostId;
+                    return _targetHostId;
             }
+            set { throw new Exception("Please use ChangeRepository() on the job object to set this value."); }
         }
 
-        // May need to set this on a replication job
-        public Guid VcbHostId
+        public Guid TargetRepositoryId
         {
-            get { return this.Info.VcbHostId; }
-        } // Not sure if I will ever have to set this currently
-        public string TargetDir 
-        {
-            get 
-            { 
-                if(_targetDir == null)
-                    return this.Info.TargetDir; 
+            get
+            {
+                if (_targetRepoId == null)
+                    return Info.TargetRepositoryId;
                 else
-                    return this._targetDir; 
+                    return _targetRepoId;
             }
+            set { throw new Exception("Please use ChangeRepository() on the job object to set this value."); }
         }
 
         // This should never be set, instead, you set the Repository which then in turn sets this field
         public string TargetFile
         {
-            get { return this.Info.TargetFile; }
-        } // Don't really need to set this atm, would be a cool feature to change the file names after a job has been created
+            get { return Info.TargetFile; }
+        }
+
+        // Don't really need to set this atm, would be a cool feature to change the file names after a job has been created
         public VPMInfoOptions Options
         {
-            get { return this._options; }
-        } // Will need to create a VPMOptions
+            get { return _options; }
+        }
+
+        // Will need to create a VPMOptions
         public ScheduleOptions ScheduleOptions
         {
-            get { return this._schedOptions; }
-        } // Need to create ScheduleOptions
+            get { return _schedOptions; }
+        }
+
+        // Need to create ScheduleOptions
         public VssOptions VssOptions
         {
-            get { return this._vssOptions; }
-        } // Need to create VssOptions
+            get { return _vssOptions; }
+        }
+
+        // Need to create VssOptions
         public int PostCommandRunCount
         {
             get
             {
                 if (_postRunCount == -999)
-                    return this.Info.PostCommandRunCount;
+                    return Info.PostCommandRunCount;
                 else
-                    return this._postRunCount;
+                    return _postRunCount;
             }
-            set { _postRunCount = value; } 
-        } // Not fully sure what this does, will have to verify
+            set { _postRunCount = value; }
+        }
+
+        // Not fully sure what this does, will have to verify
         public CDbBackupJobInfo.ESourceType SourceType
         {
-            get{ return this.Info.SourceType; }
-        } // This should probably never be touched. NET/VCB/VDDK/Files/HyperV/Backup
+            get { return Info.SourceType; }
+        }
+
+        // This should probably never be touched. NET/VCB/VDDK/Files/HyperV/Backup
         public CDbBackupJobInfo.ETargetType TargetType
         {
-            get { return this.Info.TargetType; }
-        } // This should also never be touched probably. Other/NfcTarget/SnapReplica. Looks like v5/v6 job stuff and other for backups/other?
+            get { return Info.TargetType; }
+        }
+
+        // This should also never be touched probably. Other/NfcTarget/SnapReplica. Looks like v5/v6 job stuff and other for backups/other?
         public long IncludedSize
         {
-            get { return this.Info.IncludedSize; }
-        } // No reason to set this data
+            get { return Info.IncludedSize; }
+        }
+
         public long ExcludedSize
         {
-            get { return this.Info.ExcludedSize; }
-        } // No reason to set this data
-        public bool IsDeleted
+            get { return Info.ExcludedSize; }
+        }
+
+        internal bool IsDeleted
         {
-            get { return this.Info.IsDeleted; }
-        } // Why the shit would you set this, what would that even do??
-        public CBaseSessionInfo.EResult LatestStatus
+            get { return Info.IsDeleted; }
+        }
+
+        internal CBaseSessionInfo.EResult LatestStatus
         {
-            get { return this.Info.LatestStatus; }
-        } // Reporting data, you would never set this
+            get { return Info.LatestStatus; }
+        }
+
+        // Reporting data, you would never set this
         public bool IsScheduleEnabled
         {
-            get { return this.Info.IsScheduleEnabled; }
-        } // May want to set this to false to turn off scheduling? Makes the most sense
+            get { return Info.IsScheduleEnabled; }
+        }
+
+        // May want to set this to false to turn off scheduling? Makes the most sense
         public EPlatform BackupPlatform
         {
-            get { return this.Info.BackupPlatform; }
-        } // Vmware/Hyper V, you would probably never set this
-        public Guid TargetRepositoryId
-        {
-            get
-            {
-                if(_targetRepoId == null)
-                    return this.Info.TargetRepositoryId;
-                else
-                    return _targetRepoId;
-            }
+            get { return Info.BackupPlatform; }
         }
 
-        // Currently a get, will want to add ChangeRepository() method
+        // Vmware/Hyper V, you would probably never set this
+
         public Guid InitialRepositoryId
         {
-            get { return this.Info.InitialRepositoryId; }
-        } // Probably staying a get for reporting?
+            get { return Info.InitialRepositoryId; }
+        }
+
+        // Probably staying a get for reporting?
+
         #endregion
 
-
-        internal bool IsBackup()
+        public VPMJobInfo(CDbBackupJobInfo Info)
         {
-            if (this.Info.JobType == EDbJobType.Backup)
-                return true;
-            else
-                return false;
-        }
-        internal bool IsReplica()
-        {
-            if (this.Info.JobType == EDbJobType.Replica)
-                return true;
-            else
-                return false;
-        }
-        internal bool IsCopy()
-        {
-            if (this.Info.JobType == EDbJobType.Copy)
-                return true;
-            else
-                return false;
+            _info = Info;
+            _options = new VPMInfoOptions(Info.Options);
+            _schedOptions = new ScheduleOptions(Info.ScheduleOptions);
+            _vssOptions = new VssOptions(Info.VssOptions);
         }
 
         internal CDbBackupJobInfo Info
         {
-            get
-            {
-                return this._info;
-            }
+            get { return _info; }
         }
 
-
-        public VPMJobInfo(CDbBackupJobInfo Info)
+        internal bool IsBackup()
         {
-            this._info = Info;
-            this._options = new VPMInfoOptions(Info.Options);
-            this._schedOptions = new ScheduleOptions(Info.ScheduleOptions);
-            this._vssOptions = new VssOptions(Info.VssOptions);
+            if (Info.JobType == EDbJobType.Backup)
+                return true;
+            else
+                return false;
+        }
+
+        internal bool IsReplica()
+        {
+            if (Info.JobType == EDbJobType.Replica)
+                return true;
+            else
+                return false;
+        }
+
+        internal bool IsCopy()
+        {
+            if (Info.JobType == EDbJobType.Copy)
+                return true;
+            else
+                return false;
         }
 
         internal void ChangeRepository(VPMRepository repository)
         {
-            this._targetDir = repository.Path;
-            this._targetRepoId = repository.Id;
-            this._targetHostId = repository.MountHostId;
+            _targetDir = repository.Path;
+            _targetRepoId = repository.Id;
+            _targetHostId = repository.MountHostId;
         }
     }
 }
