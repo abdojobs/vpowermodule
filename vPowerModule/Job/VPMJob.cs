@@ -16,37 +16,36 @@ namespace vPowerModule.Job
         private string managerExe = "C:\\Program Files\\Veeam\\Backup and Replication\\Veeam.Backup.Manager.exe";
         //private JobOptions _options;
 
+        public Guid Id { get { return this.Info.Id; } }
+
         public string Name
         {
-            get { return this._info.Name; }
-            set
-            {
-                CDbBackupJobInfo Job = CDBManager.Instance.BackupJobs.FindJob(value);
-                if (Job == null)
-                    this._info.Name = value;
-                else
-                { throw new Exception("Job already exists with that name"); }
-            }
+            get { return this.Info.Name; }
+            set { this.Info.Name = value; }
         }
 
         public string Description
         {
-            get { return this._info.Description; }
-            set { _info.Description = value;  }
+            get { return this.Info.Description; }
+            set { this.Info.Description = value;  }
         }
 
-        public VPMJobInfo Info
+        internal VPMJobInfo Info
         {
             get 
             {
                 return _info; 
             }
-            set // I decided to add a set here so you could create a template of baseline info and only change a few things for each job you template
-            {
-                _info = value;
-            }
+            set { _info = value; }
         }
-        public Guid Id { get { return this.Info.Id; } }
+
+        public CBaseSessionInfo.EResult LatestStatus
+        {
+            get { return this.Info.LatestStatus; }
+        }
+        
+        
+
         #endregion
 
         public VPMJob(CBackupJob job)
