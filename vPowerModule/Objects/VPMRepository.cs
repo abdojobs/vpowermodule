@@ -6,11 +6,16 @@ using Veeam.Backup.Core;
 
 namespace vPowerModule.Objects
 {
-    class VPMRepository
+    public class VPMRepository
     { 
         private readonly CBackupRepository _repository;
 
         #region Properties
+        public Guid Id
+        {
+            get { return _repository.Id; }
+        }
+
         public CBackupRepository Repository
         {
             get { return _repository; }           
@@ -51,6 +56,7 @@ namespace vPowerModule.Objects
         {
             get { return _repository.ShareCredsId; }
         }
+
         #endregion
 
         public VPMRepository(CBackupRepository repo)

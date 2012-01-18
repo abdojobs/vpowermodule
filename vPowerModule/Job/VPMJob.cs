@@ -4,6 +4,7 @@ using Veeam.Backup.DBManager;
 using Veeam.Backup.Model;
 using Veeam.Backup.Core;
 using vPowerModule.Job.Options;
+using vPowerModule.Objects;
 
 namespace vPowerModule.Job
 {
@@ -12,8 +13,8 @@ namespace vPowerModule.Job
         #region Properties
         private readonly CBackupJob _job;
         private VPMJobInfo _info;
-        private  string managerExe = "C:\\Program Files\\Veeam\\Backup and Replication\\Veeam.Backup.Manager.exe";
-        private JobOptions _options;
+        private string managerExe = "C:\\Program Files\\Veeam\\Backup and Replication\\Veeam.Backup.Manager.exe";
+        //private JobOptions _options;
 
         public string Name
         {
@@ -52,7 +53,7 @@ namespace vPowerModule.Job
         {
             this._job = job;
             this.Info = new VPMJobInfo(job.Info);
-            this.Options = new JobOptions(job.Options);
+            //this.Options = new JobOptions(job.Options);
         }
 
         public static VPMJob[] GetAll()
@@ -70,11 +71,19 @@ namespace vPowerModule.Job
         public bool IsReplica { get { return this.Info.IsReplica(); } }
         public bool IsCopy { get { return this.Info.IsCopy(); } }
 
-        public JobOptions Options
+        public void ChangeRepository(VPMRepository repository)
+        {
+            this.Info.TargetDir = repository.Path;
+            this.Info.TargetRepositoryId = repository.Id;
+            this.Info.TargetHostId = repository.MountHostId;
+        }
+
+        /* Currently commented until I fully integrate VPMJobInfo
+         * public JobOptions Options
         {
             get { return _options; }
             set { _options = value; }
-        }
+        }*/
 
         public void Save()
         {

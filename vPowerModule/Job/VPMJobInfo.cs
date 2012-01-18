@@ -17,6 +17,8 @@ namespace vPowerModule.Job
         private string _name;
         private string _description;
         private string _targetDir = null;
+        private Guid _targetRepoId;
+        private Guid _targetHostId;
         private int _postRunCount = -999; // Setting this to a ridiculous number for evaluation later
         #endregion
 
@@ -60,13 +62,22 @@ namespace vPowerModule.Job
         }
         public Guid TargetHostId
         {
-            get { return this.Info.TargetHostId; } 
-        } // May need to set this on a replication job
+            get
+            {
+                if(_targetHostId == null)
+                    return this.Info.TargetHostId;
+                else
+                    return this._targetHostId;
+            }
+            set { this._targetHostId = value; }
+        }
+
+        // May need to set this on a replication job
         public Guid VcbHostId
         {
             get { return this.Info.VcbHostId; }
         } // Not sure if I will ever have to set this currently
-        public string TargetDir 
+        public string TargetDir
         {
             get 
             { 
@@ -74,8 +85,11 @@ namespace vPowerModule.Job
                     return this.Info.TargetDir; 
                 else
                     return this._targetDir; 
-            } 
-        } // This should never be set, instead, you set the Repository which then in turn sets this field
+            }
+            set { this._targetDir = value; }
+        }
+
+        // This should never be set, instead, you set the Repository which then in turn sets this field
         public string TargetFile
         {
             get { return this.Info.TargetFile; }
@@ -110,7 +124,7 @@ namespace vPowerModule.Job
         public CDbBackupJobInfo.ETargetType TargetType
         {
             get { return this.Info.TargetType; }
-        } // This should also never be toucehd probably. Other/NfcTarget/SnapReplica. Looks like v5/v6 job stuff and other for backups/other?
+        } // This should also never be touched probably. Other/NfcTarget/SnapReplica. Looks like v5/v6 job stuff and other for backups/other?
         public long IncludedSize
         {
             get { return this.Info.IncludedSize; }
@@ -137,8 +151,17 @@ namespace vPowerModule.Job
         } // Vmware/Hyper V, you would probably never set this
         public Guid TargetRepositoryId
         {
-            get { return this.Info.TargetRepositoryId; }
-        } // Currently a get, will want to add ChangeRepository() method
+            get
+            {
+                if(_targetRepoId == null)
+                    return this.Info.TargetRepositoryId;
+                else
+                    return _targetRepoId;
+            }
+            set { this._targetRepoId = value; }
+        }
+
+        // Currently a get, will want to add ChangeRepository() method
         public Guid InitialRepositoryId
         {
             get { return this.Info.InitialRepositoryId; }
