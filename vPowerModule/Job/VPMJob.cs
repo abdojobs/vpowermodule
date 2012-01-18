@@ -73,9 +73,7 @@ namespace vPowerModule.Job
 
         public void ChangeRepository(VPMRepository repository)
         {
-            this.Info.TargetDir = repository.Path;
-            this.Info.TargetRepositoryId = repository.Id;
-            this.Info.TargetHostId = repository.MountHostId;
+            this.Info.ChangeRepository(repository);
         }
 
         /* Currently commented until I fully integrate VPMJobInfo
