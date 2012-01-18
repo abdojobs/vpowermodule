@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Veeam.Backup.DBManager;
 using Veeam.Backup.Model;
 using Veeam.Backup.Core;
+using vPowerModule.Job.Options;
 
 namespace vPowerModule.Job
 {
@@ -12,6 +13,7 @@ namespace vPowerModule.Job
         private readonly CBackupJob _job;
         private VPMJobInfo _info;
         private  string managerExe = "C:\\Program Files\\Veeam\\Backup and Replication\\Veeam.Backup.Manager.exe";
+        private JobOptions _options;
 
         public string Name
         {
@@ -49,7 +51,8 @@ namespace vPowerModule.Job
         public VPMJob(CBackupJob job)
         {
             this._job = job;
-            this._info = new VPMJobInfo(job.Info);
+            this.Info = new VPMJobInfo(job.Info);
+            this.Options = new JobOptions(job.Options);
         }
 
         public static VPMJob[] GetAll()
@@ -67,6 +70,12 @@ namespace vPowerModule.Job
         public bool IsReplica { get { return this.Info.IsReplica(); } }
         public bool IsCopy { get { return this.Info.IsCopy(); } }
 
+        public JobOptions Options
+        {
+            get { return _options; }
+            set { _options = value; }
+        }
+
         public void Save()
         {
             CDbBackupJobInfo temp = CDbBackupJobInfo.CreateExisting(
@@ -79,7 +88,7 @@ namespace vPowerModule.Job
                 this.Info.TargetFile,
                 this.Info.Options.Options,
                 this.Info.ScheduleOptions.SchedOptions,
-                this.Info.VssOptions.VssOptions,
+                this.Info.VssOptions.cVssOptions,
                 this.Info.PostCommandRunCount,
                 this.Info.VcbHostId,
                 this.Info.SourceType,
@@ -110,7 +119,7 @@ namespace vPowerModule.Job
                 this.Info.TargetFile,
                 this.Info.Options.Options,
                 this.Info.ScheduleOptions.SchedOptions,
-                this.Info.VssOptions.VssOptions,
+                this.Info.VssOptions.cVssOptions,
                 this.Info.PostCommandRunCount,
                 this.Info.VcbHostId,
                 this.Info.SourceType,
