@@ -4,6 +4,7 @@ using System.Diagnostics;
 using Veeam.Backup.Core;
 using Veeam.Backup.DBManager;
 using Veeam.Backup.Model;
+using vPowerModule.Job.Options;
 using vPowerModule.Objects;
 
 namespace vPowerModule.Job
@@ -14,10 +15,11 @@ namespace vPowerModule.Job
         #region Private Properties
         private readonly CBackupJob _job;
         private string managerExe = "C:\\Program Files\\Veeam\\Backup and Replication\\Veeam.Backup.Manager.exe";
-        //private JobOptions _options;
+        private VPMJobOptions _options;
         #endregion
 
         #region Public Properties
+
         public Guid Id
         {
             get { return Info.Id; }
@@ -55,9 +57,16 @@ namespace vPowerModule.Job
             get { return Info.IsCopy(); }
         }
 
+        public VPMVssOptions VssOptions { get { return this.Info.VssOptions; } }
+
+        public VPMScheduleOptions ScheduleOptions { get { return this.Info.ScheduleOptions; } }
+
+        public VPMJobOptions Options { get { return this._options; } private set { _options = value; } }
+
         #endregion
 
         #region Public Methods
+
         public void ChangeRepository(VPMRepository repository)
         {
             Info.ChangeRepository(repository);
@@ -74,7 +83,7 @@ namespace vPowerModule.Job
                 Info.TargetDir,
                 Info.TargetFile,
                 Info.Options.Options,
-                Info.ScheduleOptions.SchedOptions,
+                Info.VpmScheduleOptions.SchedOptions,
                 Info.VssOptions.cVssOptions,
                 Info.PostCommandRunCount,
                 Info.VcbHostId,
@@ -113,7 +122,7 @@ namespace vPowerModule.Job
                 Info.TargetDir,
                 Info.TargetFile,
                 Info.Options.Options,
-                Info.ScheduleOptions.SchedOptions,
+                Info.VpmScheduleOptions.SchedOptions,
                 Info.VssOptions.cVssOptions,
                 Info.PostCommandRunCount,
                 Info.VcbHostId,
@@ -158,7 +167,7 @@ namespace vPowerModule.Job
         {
             _job = job;
             Info = new VPMJobInfo(job.Info);
-            //this.Options = new JobOptions(job.Options);
+            this.Options = new VPMJobOptions(job.Options);
         }
 
         public static VPMJob[] GetAll()
@@ -171,16 +180,6 @@ namespace vPowerModule.Job
             }
             return Jobs.ToArray();
         }
-
-
-        /* Currently commented until I fully integrate VPMJobInfo
-         * public JobOptions Options
-        {
-            get { return _options; }
-            set { _options = value; }
-        }*/
-
-
 
     }
 }
