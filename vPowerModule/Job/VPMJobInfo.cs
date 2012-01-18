@@ -3,6 +3,7 @@ using Veeam.Backup.DBManager;
 using Veeam.Backup.Model;
 using Veeam.Backup.Common;
 using vPowerModule.Job.Options;
+using vPowerModule.Objects;
 using ScheduleOptions = vPowerModule.Job.Options.ScheduleOptions;
 
 namespace vPowerModule.Job
@@ -60,7 +61,7 @@ namespace vPowerModule.Job
         {
             get { return this._info.JobType; }
         }
-        public Guid TargetHostId
+        public Guid TargetHostId // Still needs some error checking and verified
         {
             get
             {
@@ -69,7 +70,6 @@ namespace vPowerModule.Job
                 else
                     return this._targetHostId;
             }
-            set { this._targetHostId = value; }
         }
 
         // May need to set this on a replication job
@@ -77,7 +77,7 @@ namespace vPowerModule.Job
         {
             get { return this.Info.VcbHostId; }
         } // Not sure if I will ever have to set this currently
-        public string TargetDir
+        public string TargetDir 
         {
             get 
             { 
@@ -86,7 +86,6 @@ namespace vPowerModule.Job
                 else
                     return this._targetDir; 
             }
-            set { this._targetDir = value; }
         }
 
         // This should never be set, instead, you set the Repository which then in turn sets this field
@@ -158,7 +157,6 @@ namespace vPowerModule.Job
                 else
                     return _targetRepoId;
             }
-            set { this._targetRepoId = value; }
         }
 
         // Currently a get, will want to add ChangeRepository() method
@@ -208,5 +206,11 @@ namespace vPowerModule.Job
             this._vssOptions = new VssOptions(Info.VssOptions);
         }
 
+        internal void ChangeRepository(VPMRepository repository)
+        {
+            this._targetDir = repository.Path;
+            this._targetRepoId = repository.Id;
+            this._targetHostId = repository.MountHostId;
+        }
     }
 }
