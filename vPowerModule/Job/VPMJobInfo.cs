@@ -19,8 +19,8 @@ namespace vPowerModule.Job
         private string _name;
         private int _postRunCount = -999; // Setting this to a ridiculous number for evaluation later
         private string _targetDir;
-        private Guid _targetHostId;
-        private Guid _targetRepoId;
+        private Guid _targetHostId = Guid.Empty;
+        private Guid _targetRepoId = Guid.Empty;
 
         #endregion
 
@@ -91,7 +91,7 @@ namespace vPowerModule.Job
         {
             get
             {
-                if (_targetHostId == null)
+                if (_targetHostId.Equals(Guid.Empty))
                     return Info.TargetHostId;
                 else
                     return _targetHostId;
@@ -103,7 +103,7 @@ namespace vPowerModule.Job
         {
             get
             {
-                if (_targetRepoId == null)
+                if (_targetRepoId.Equals(Guid.Empty))
                     return Info.TargetRepositoryId;
                 else
                     return _targetRepoId;

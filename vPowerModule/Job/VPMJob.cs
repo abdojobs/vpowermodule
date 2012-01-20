@@ -138,7 +138,8 @@ namespace vPowerModule.Job
                 Info.BackupPlatform,
                 Info.TargetRepositoryId,
                 Info.InitialRepositoryId);
-            CBackupJob.Create(temp);
+            //CBackupJob.Create(temp);
+            CDBManager.Instance.BackupJobs.CreateJob(temp);
             if(includeObjects)
             {
                 foreach (CObjectInJob objectInJob in this._job.GetObjectsInJob())
@@ -148,8 +149,10 @@ namespace vPowerModule.Job
                                              objectInJob.Info.Type, objectInJob.Info.DiskFilter,
                                              objectInJob.Info.UpdateVmx);
                 }
-                CBackupJob.Update(temp);
+                //CBackupJob.Update(temp);
+                CDBManager.Instance.BackupJobs.UpdateJob(temp);
             }
+            
         }
 
         internal void Start(string RunType)
@@ -177,7 +180,7 @@ namespace vPowerModule.Job
         }
         #endregion
 
-        internal VPMJobInfo Info { get; set; }
+        public  VPMJobInfo Info { get; set; }
 
         public VPMJob(CBackupJob job)
         {
