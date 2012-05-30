@@ -26,12 +26,13 @@ namespace vPowerModule.Job
 
         #region Public Properties
 
+        // If you ever need a reason to set this...You can write a SQL query...
         public Guid Id
         {
             get { return Info.Id; }
         }
 
-        // If you ever need a reason to set this...You can write a SQL query...
+        
         public string Name
         {
             get
